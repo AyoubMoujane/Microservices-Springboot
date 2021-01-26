@@ -1,0 +1,24 @@
+@startuml
+'https://plantuml.com/component-diagram
+
+
+
+node "Consumer" {
+  [movie-catalog-service]
+}
+
+node "Discovery service" {
+  [discovery-server]
+}
+
+node "Publisher" {
+    [movie-info-service]
+    [ratings-data-service]
+}
+
+[movie-catalog-server] --> [discovery-server]
+
+[discovery-server] -- [movie-info-service]
+[discovery-server] -- [ratings-data-service]
+
+@enduml
